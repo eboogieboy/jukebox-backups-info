@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Privacy policy for Jukebox Backups, a personal Raspberry Pi-to-Google Drive encrypted backup utility.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Privacy Policy — Jukebox Backups</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><nav class="wrap nav" aria-label="Primary"><a class="brand" href="./"><span>JB / 01</span>Jukebox Backups</a><div class="nav-links"><a href="./">Overview</a><a href="privacy.html" aria-current="page">Privacy policy</a><a href="terms.html">Terms</a></div></nav></header>
+<main class="wrap content">
+<p class="eyebrow">Google Drive authorisation</p><h1>Privacy policy</h1><p class="updated">Last updated: 2 November 2026</p>
+<p><strong>Jukebox Backups</strong> is a private-use backup utility for the owner's Raspberry Pi music jukebox. This policy explains how the utility accesses and uses Google account information, files, and Google Drive storage when the owner explicitly authorises access. This website itself is a public informational site, not a backup service.</p>
+<h2>What data the utility accesses</h2>
+<p>The owner may grant Google Drive access through Google's OAuth authorisation process. The resulting connection can access Google Drive files and file metadata according to the permissions displayed on Google's consent screen. The actual Google OAuth scope requested during setup determines the technical maximum access.</p>
+<p>For normal jukebox operation, the utility is configured to use the dedicated Google Drive location <strong>Jukebox-Pi/restic</strong> to create, list, read, update and delete encrypted backup files as needed for backup, retention checks and restoration. It does not intentionally scan or copy unrelated Google Drive documents. Broader account permissions, if shown during authorisation, are not used to analyse unrelated Drive content.</p>
+<p>The Raspberry Pi backup source may include its system settings, configuration files, user account and network configuration, SSH keys, Spotify pairing credentials, and jukebox application state. These files are encrypted locally with restic before being transferred to Google Drive; their contents are not published through this site.</p>
+<h2>How that data is used</h2>
+<ul>
+<li>To upload encrypted backup snapshots from the Raspberry Pi to the owner's Google Drive.</li>
+<li>To list or check encrypted backup archives and apply configured retention policies.</li>
+<li>To download encrypted backup archives when the owner initiates recovery.</li>
+<li>To refresh Google OAuth credentials and maintain authorised access while the owner allows it.</li>
+</ul>
+<p>Google user data is not used for advertising, profiling, training models, or selling personal information. The utility does not transfer Google user data to unrelated third parties.</p>
+<h2>Where data and credentials are stored</h2>
+<p>Backup source data stays on the owner's Raspberry Pi until encrypted by restic. Encrypted backup objects are stored in the owner's Google Drive account. Google may process account identifiers, access records, file metadata, and encrypted files to provide Drive functionality under Google's own privacy policies.</p>
+<p>OAuth access tokens and refresh tokens are stored in restricted local configuration files on the Raspberry Pi for rclone; backup decryption credentials are stored separately in protected local files. They must not be placed in the public GitHub repository or this website. The backup encryption password is not sent to Google Drive by the utility.</p>
+<p>The public informational pages do not ask visitors to sign in with Google, set first-party analytics cookies, or run advertising trackers. GitHub, as the host of GitHub Pages, may process ordinary website access data under its own privacy practices.</p>
+<h2>Retention and deletion</h2>
+<p>Encrypted backup copies remain in the owner's Google Drive until deleted by the owner or by a configured retention job. The planned schedule retains a rolling history of daily, weekly and monthly snapshots, but it is not active until the owner completes and verifies backup installation. Restoring or removing backups does not automatically alter the owner's unrelated Google Drive documents.</p>
+<p>Revoking Google authorisation prevents future API access but does not automatically erase already uploaded encrypted backups. The owner may delete the <strong>Jukebox-Pi</strong> backup folder in Google Drive, remove the local rclone credentials, and delete any local backup archives. The owner can revoke access from <a href="https://myaccount.google.com/permissions">Google Account → Third-party connections</a>.</p>
+<h2>Security</h2>
+<p>Transport to Google uses HTTPS via the Google Drive API. Restic encrypts archive contents before upload. The owner controls access to the Raspberry Pi, Google account, and backup encryption password. No backup system removes all risk; a working backup should be validated with actual restore tests.</p>
+<h2>Contact and changes</h2>
+<p>This is a personal-use project maintained through <a href="https://github.com/eboogieboy/jukebox-backups-info">its public GitHub information repository</a>. For questions, use <a href="https://github.com/eboogieboy/jukebox-backups-info/issues">GitHub Issues</a>; do not include private data or credentials in public issue reports.</p>
+<p>When the backup system's data handling changes, this policy should be updated. The date above identifies the current version.</p>
+<p><a href="./">Return to Jukebox Backups overview</a></p>
+</main>
+<footer class="site-footer"><div class="wrap foot"><span>Jukebox Backups · Personal Raspberry Pi utility</span><div class="foot-links"><a href="./">Home</a><a href="terms.html">Terms</a></div></div></footer>
+</body>
+</html>
