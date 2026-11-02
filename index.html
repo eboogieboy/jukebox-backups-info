@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Jukebox Backups is a personal Raspberry Pi backup utility that encrypts snapshots locally before storing them in the owner's Google Drive account.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Jukebox Backups — Private backup utility for a Raspberry Pi jukebox</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header"><nav class="wrap nav" aria-label="Primary"><a class="brand" href="./"><span>JB / 01</span>Jukebox Backups</a><div class="nav-links"><a href="./" aria-current="page">Overview</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms</a></div></nav></header>
+<main>
+<section class="wrap hero"><p class="eyebrow">Personal backup utility</p><h1>Music stays playing.<br>Memories stay protected.</h1><p class="lead">Jukebox Backups is a personal utility for backing up the configuration and persistent data of a Raspberry Pi-powered music jukebox. It uses <strong>restic</strong> to encrypt backup data on the device and <strong>rclone</strong> to transfer encrypted snapshots to the owner's Google Drive.</p>
+<div class="hero-actions"><a class="btn btn-primary" href="privacy.html">How Google Drive data is handled</a><a class="btn" href="https://github.com/eboogieboy/jukebox-backups-info">View public project information</a></div></section>
+<section class="section" aria-labelledby="how-title"><div class="wrap"><p class="eyebrow">How it works</p><h2 id="how-title">Three steps to a safer recovery</h2>
+<div class="grid"><article class="tile"><span class="num">01 / SELECT</span><h3>Collect local state</h3><p>Read the jukebox's selected settings, service configuration, and persistent playback and library state from its Raspberry Pi.</p></article>
+<article class="tile"><span class="num">02 / ENCRYPT</span><h3>Encrypt before uploading</h3><p>Restic encrypts the backup archive on the Raspberry Pi. The encryption password is held separately from Google Drive.</p></article>
+<article class="tile"><span class="num">03 / STORE</span><h3>Save to the owner's Drive</h3><p>Rclone uses the owner's explicit Google authorisation to manage encrypted backup files in a dedicated <code>Jukebox-Pi/restic</code> folder.</p></article></div></div></section>
+<section class="section"><div class="wrap"><div class="note"><strong>Important:</strong> This website is an informational page, not a sign-in or backup portal. It does not request your Google password, collect Google Drive files, or hold backup encryption keys. Backups run on the owner's Raspberry Pi only after setup and authorisation. Google Drive storage is distinct from a bootable full-system image backup.</div>
+<p>For details about what Google account data the utility accesses, how it is protected, and how to revoke access, read the <a href="privacy.html">Jukebox Backups privacy policy</a>.</p></div></section>
+</main>
+<footer class="site-footer"><div class="wrap foot"><span>Jukebox Backups · Personal Raspberry Pi utility</span><div class="foot-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="https://github.com/eboogieboy/jukebox-backups-info/issues">Contact / questions</a></div></div></footer>
+</body>
+</html>
